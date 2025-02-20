@@ -22,7 +22,5 @@
 
 function prepareGifts(gifts: number[]): number[] {
   // Code here
-  const result: number[] = [];
-  gifts.map((x) => !result.includes(x) ? result.push(x) : '')
-  return result.sort((x, y) => x - y);
+  return [... new Set([... gifts])].sort((x, y) => x - y);
 }
